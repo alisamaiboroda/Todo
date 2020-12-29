@@ -1,11 +1,17 @@
 <template>
-  <div id="app"></div>
+  <div class="container" id="app">
+    <h1>Todo application</h1>
+    <TodoList />
+  </div>
 </template>
 
 <script>
+import TodoList from "./components/TodoList";
 export default {
   name: "App",
-  components: {},
+  components: {
+    TodoList,
+  },
 };
 </script>
 
@@ -17,5 +23,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 </style>
