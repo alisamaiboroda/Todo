@@ -1,6 +1,6 @@
 <template>
   <li>
-    <span>
+    <span v-bind:class="{ done: todo.completed }">
       <input type="checkbox" />
       <strong>{{ todo.id }}</strong>
       {{ todo.title }}
@@ -35,6 +35,9 @@ li {
   color: white;
   background-color: #cccccc;
   font-weight: bold;
+}
+input {
+  margin-right: 1rem;
 }
 .done {
   text-decoration: line-through;
