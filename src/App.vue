@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <h1>Todo application</h1>
-    <TodoList v-bind:todos="todos" />
+    <TodoList v-bind:todos="todos" @remove-todo="removeTodo" />
   </div>
 </template>
 
@@ -17,6 +17,11 @@ export default {
         { id: 3, title: "Купить корм для кота", completed: false },
       ],
     };
+  },
+  methods: {
+    removeTodo(id) {
+      this.todos = this.todos.filter((t) => t.id !== id);
+    },
   },
   components: {
     TodoList,
