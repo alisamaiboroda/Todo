@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="app">
+  <div id="app" class="container">
     <h1>Todo application</h1>
     <TodoList v-bind:todos="todos" />
   </div>
@@ -35,9 +35,9 @@ export default {
 }
 .container {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-wrap: wrap;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 </style>
