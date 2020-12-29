@@ -1,8 +1,12 @@
 <template>
   <li>
     <span v-bind:class="{ done: todo.completed }">
-      <input type="checkbox" v-on:change="todo.completed = !todo.completed" />
-      <strong>{{ index + 1 }}</strong>
+      <a-checkbox
+        class="checkbox"
+        v-on:change="todo.completed = !todo.completed"
+      ></a-checkbox>
+
+      <strong class="number">{{ index + 1 }}</strong>
       {{ todo.title }}
     </span>
     <button class="rm" v-on:click="$emit('remove-todo', todo.id)">
@@ -26,6 +30,7 @@ export default {
 <style scoped>
 li {
   border: 1px solid #cccccc;
+  border-radius: 4px;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0.2rem;
@@ -38,9 +43,14 @@ li {
   color: white;
   background-color: #cccccc;
   font-weight: bold;
-}
-input {
   margin-right: 1rem;
+}
+.number {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.checkbox {
+  margin-left: 1rem;
 }
 .done {
   text-decoration: line-through;
