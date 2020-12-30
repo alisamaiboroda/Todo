@@ -43,11 +43,9 @@ export default {
     filteredTodos() {
       if (this.filter === "all") {
         return this.todos;
-      }
-      if (this.filter === "completed") {
+      } else if (this.filter === "completed") {
         return this.todos.filter((t) => t.completed);
-      }
-      if (this.filter === "not-completed") {
+      } else if (this.filter === "not-completed") {
         return this.todos.filter((t) => !t.completed);
       } else {
         return this.todos;
